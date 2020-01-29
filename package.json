@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "DEBUG=app nodemon app.js",
+    "unit": "jest",
     "lint": "eslint app.js"
   },
   "repository": {
