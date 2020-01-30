@@ -1,10 +1,11 @@
 const { expect } = require('chai');
 const request = require('supertest');
-const app = require('../app');
 
 const OrderController = require('../src/controllers/ordersController');
 
+
 describe('Orders', () => {
+
   describe('placeOrder', () => {
     it('should return an order w/ an array of 1 item, when a single product', () => {
       const o1 = new OrderController();

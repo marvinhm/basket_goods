@@ -20,12 +20,11 @@
     <nav class="" role="navigation">
       <ul class="nav navbar-nav">
         <li> <a href="/" class="navbar-brand">Home</a> </li>
+        <% for(item in nav) { %>
         <li>
-          <a href="#"> Category</a>
+          <a href="<%=nav[item].link%> "> <%= nav[item].title %></a>
         </li>
-        <li>
-          <a href="#"> Catergory</a>
-        </li>
+        <% } %>
       
       </ul>
       <ul class="nav navbar-right navbar-nav">
