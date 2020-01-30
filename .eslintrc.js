@@ -16,4 +16,5 @@ module.exports = {
   },
   rules: {
   },
+  env: { node: true, jest: true }
 };
