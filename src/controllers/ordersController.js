@@ -1,7 +1,9 @@
 function orderController() {
   this.list = [];
   this.placeOrder = (items) => {
-    this.list.push(items);
+    for (item in items) {
+      this.list.push(items[item]);
+    }
   };
 }
 
