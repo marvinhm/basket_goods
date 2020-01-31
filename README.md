@@ -3,15 +3,15 @@
 A program and associated unit tests that prices a basket of goods, while accounting for special oﬀers.
 
 
-## Design & Structure ##
+## Design & Structure
 I appoached the design by briefly domain modelling the solution in order to figure out where to start. I begun with thinking about a customers path...
 - create an order (POST) with a list of items
 - check the validity of that list with the products in stock
-- run a price and discount check on the list of items and display
+- run a price/discount check on the list of items and then send results
 
 I also initially planned that I would create a quick frontend to allow ease of use.
 
-### Output ###
+### Output
 
 Program will output:
 ```
@@ -35,15 +35,25 @@ Program will output:
 * [Bootstrap] - For templating and styling.
 
 
-## Getting Started ##
-Install dependencies then startup our server
+## Getting Started
+After cloning the project, install the dependancies with npm
 ```
 npm install
-npm start
-
 ```
 
-### Starting DB ###
+## Running Tests
+You can run the tests with this line.
+```
+npm run unit
+```
+
+## Starting Node Server
+```
+npm start
+```
+
+
+### Starting DB 
 - This project uses mongoDB to store collections for Orders (and also for Products). To use it download (https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 
 - Then start mongod to start db server (leave running)
@@ -57,7 +67,7 @@ mongo shopAPI < productsJson.js
 
 ```
 
-### Start Shopping ###
+### Start Shopping
 
 To start shopping visit (http://localhost:5000)
 
