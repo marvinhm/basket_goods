@@ -73,34 +73,36 @@
           
           
           <!--/stories-->
-          <% if(orders.length == 0) {%>
-          
-          <h3>No Orders Yet!<h3>
-          
-          <% } else { %>
 
-          
-            <% for(item in orders) {%>
-            <div class="row">    
-              <br>
-              <div class="col-md-2 col-sm-3 text-center">
-                <a class="story-title" href="#"><img alt="" src="" style="width:100px;height:100px" class="img-circle"></a>
+          <script>
+            let myarr = [];
+            let listDisplay = "";
+            function pushData() {
+              let inputText = document.getElementById("inputText").value              
+
+              myarr.push(inputText);
+              for (i in myarr) {
+                listDisplay += myarr[i] + "<br/>";
+              }
+              document.getElementById("listOfItems").innerHTML = listDisplay;
+              myarr = [];
+            }
+          </script>
+          <div class="row"> 
+            <form action="/api/order/new" method="post">
+              <div class="form-group">
+                <label>Shopping list</label>
+                <input type="text" id="inputText" class="form-control" name="list" placeholder="Enter product">
+                <small id="listOfItems" class="form-text text-muted">Seperate items by comma and single space (e.g. Soup, Bread, Milk, Apples)</small>
+                <hr/>
+                <label>Currency</label>
+                <input type="text" id="inputText" class="form-control" name="currency" placeholder="Enter currency">
+                <small id="listOfItems" class="form-text text-muted"></small>
               </div>
-              <div class="col-md-10 col-sm-9">
-                <h3><%= orders[item].list%></h3>
-                <div class="row">
-                  <div class="col-xs-9">
-                    <h4><span class="label label-default">£<%= orders[item].total%></span></h4><h4>
-                    <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="#" class="text-muted">Read More</a></small>
-                    </h4></div>
-                  <div class="col-xs-3"></div>
-                </div>
-                <br><br>
-              </div>
-            </div>
-            <hr>
-            <% } %>
-          <% } %>
+              <button type="submit" class="btn btn-primary" rediretct="/api/order">Add to Basket</button>
+            </form>
+          </div>
+          <hr>
           
          
           <!--/stories-->
@@ -128,7 +130,7 @@
   </div>
 </footer>
 	<!-- script references -->
-    <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/jquery.min.js"></script>
 		<script src="../../js/bootstrap.min.js"></script>
 	</body>
 </html>

@@ -1,36 +1,19 @@
-const { expect } = require('chai');
-const request = require('supertest');
+// const { expect } = require('chai');
+// const request = require('supertest');
 
-const OrderController = require('../src/controllers/ordersController');
+const OrderController = require('../src/controllers/orderController');
 
 
 describe('Orders', () => {
-
-  describe('placeOrder', () => {
-    it('should return an order w/ an array of 1 item, when a single product', () => {
+  describe('stockList', () => {
+    it('should return an order w/ an array', () => {
       const o1 = new OrderController();
-      o1.placeOrder([{ name: 'apple' }]);
-      expect(o1.list.length).to.equal(1);
+      expect(o1.stockList).toBeInstanceOf(Array);
     });
 
-    it('should return an order w/ an array of 2 items, when a two products ordered', () => {
+    it('Array should have 5 items', () => {
       const o1 = new OrderController();
-      o1.placeOrder([{ name: 'apple' }, { name: 'milk' }]);
-      expect(o1.list.length).to.equal(2);
+      expect(o1.stockList.length).toEqual(4);
     });
-  });
-});
-
-
-describe('POST', () => {
-  it('should return an order w/ an array of 1 item, when a single product is in request body', async () => {
-    const res = await request(app)
-      .post('/api/orders')
-      .send({
-        order: ['a'],
-      });
-    expect(res.status).to.equal(200);
-    expect(res.body).to.have.property('_id');
-    expect(res.body.order).to.contain({ name: 'apple' });
   });
 });
