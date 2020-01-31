@@ -54,7 +54,7 @@ npm start
 
 
 ### Starting DB 
-- This project uses mongoDB to store collections for Orders (and also for Products). To use it download (https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+- This project uses mongoDB to store collections for Orders and persist data (and also for Products). To use it download (https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 
 - Then start mongod to start db server (leave running)
 ```
