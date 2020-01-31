@@ -51,9 +51,9 @@ npm start
 mongod
 
 ```
-- You'll need to use this following command to load products list
+- You'll need to use this following command to load products list which is in the base of our project directory
 ```
-mongo shopAPI < product
+mongo shopAPI < productsJson.js
 
 ```
 
